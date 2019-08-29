@@ -17,6 +17,6 @@ class File(models.Model):
 
 
 class Files(models.Model):
-    files = models.ForeignKey('File', on_delete=models.CASCADE)
+    files = models.ForeignKey('File', on_delete=models.CASCADE, related_name='filees')
     file = models.FileField(upload_to='file/')
 # Create your models here.

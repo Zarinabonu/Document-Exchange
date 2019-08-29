@@ -31,4 +31,17 @@ class DocumentSerializer(ModelSerializer):
 
         return f
 
+class FilesList(ModelSerializer):
+    class Meta:
+        model = Files
+        fields =('file',)
+
+
+class DocumentListSerializer(ModelSerializer):
+    filees = FilesList(many=True)
+
+    class Meta:
+        model = File
+        fields = ('name', 'filees',)
+
 
